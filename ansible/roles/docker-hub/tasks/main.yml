@@ -1,0 +1,14 @@
+---
+# tasks file for docker-registry
+- name: Log into DockerHub
+  docker_login:
+    username: aze012
+    password: monta0660
+    email: montassar.rebai@esprit.tn
+- name: Push to docker hub
+  command: "docker push  aze012/alight:latest"
+- name: Push to docker hub
+  docker_image:
+    name: "alight"
+    repository: aze012/alight
+    push: yes

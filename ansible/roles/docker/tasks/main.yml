@@ -1,0 +1,12 @@
+---
+# tasks file for docker
+- name: create image docker
+  docker_image:
+    name: alight
+    build:
+     path: /home/master/Desktop/alight
+     pull: no
+    source: build
+    tag: latest
+    state: present
+    force_source: true

@@ -1,0 +1,21 @@
+export KUBECONFIG=/etc/kubernetes/kubelet.conf
+cat /etc/kubernetes/kubelet.conf > ~/.kube/config
+
+
+sysctl net.bridge.bridge-nf-call-iptables=1
+
+swapoff -a
+
+sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
+
+kubectl apply -f https://docs.projectcalico.org/v3.2/getting-started/kubernetes/installation/hosted/rbac-kdd.yaml
+ 
+
+kubectl proxy
+
+ufw enable
+
+
+jenkins role binding 
+kubectl create clusterrolebinding jenkins --clusterrole cluster-admin --serviceaccount=jenkins:default
+

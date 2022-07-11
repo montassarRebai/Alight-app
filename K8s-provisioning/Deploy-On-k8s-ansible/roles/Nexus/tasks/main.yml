@@ -1,0 +1,15 @@
+---
+# tasks file for Nexus
+- name: Create Nexus Workspace   
+  shell: kubectl create namespace nexus ;
+- name: Create Nexus service  
+  shell: kubectl apply -f /home/master/Desktop/kubernetes/ansible/roles/Nexus/tasks/nexus-ser.yaml
+- name: Create Nexus PV  
+  shell: kubectl apply -f /home/master/Desktop/kubernetes/ansible/roles/Nexus/tasks/nexus-vol.yaml  
+- name: Create Nexus PVC 
+  shell: kubectl apply -f /home/master/Desktop/kubernetes/ansible/roles/Nexus/tasks/nexus-PVC.yaml  
+- name: Create Nexus Deployement   
+  shell: kubectl apply -f /home/master/Desktop/kubernetes/ansible/roles/Nexus/tasks/nexus-dep.yaml            
+   
+  
+  

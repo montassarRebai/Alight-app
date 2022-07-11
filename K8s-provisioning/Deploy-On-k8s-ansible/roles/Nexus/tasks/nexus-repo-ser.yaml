@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nexus-service-repo
+  namespace: nexus
+  annotations:
+      prometheus.io/scrape: 'true'
+      prometheus.io/path:   /
+      prometheus.io/port:   '8081'
+spec:
+  selector: 
+    app: nexus-server
+  type: NodePort 
+  ports:
+    - port: 8083
+      targetPort: 8083  

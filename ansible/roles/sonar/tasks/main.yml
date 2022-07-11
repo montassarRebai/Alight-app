@@ -1,0 +1,5 @@
+---
+# tasks file for nexus
+- name: Execute the script
+  command: sh /home/master/Desktop/alight/sonar.sh
+

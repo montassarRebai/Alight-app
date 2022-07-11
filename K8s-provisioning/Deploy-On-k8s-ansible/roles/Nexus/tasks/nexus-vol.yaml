@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nexus-pv-volume
+  namespace: nexus
+  labels:
+    type: local
+    name: nexus
+spec:
+  storageClassName: standart
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/nexus-data"
+

@@ -1,0 +1,6 @@
+projectKey=Alight-app
+serverUrl=http://10.109.123.241:9000
+serverVersion=9.4.0.54424
+dashboardUrl=http://10.109.123.241:9000/dashboard?id=Alight-app
+ceTaskId=AYFcfhGdBP2SCap3bM6n
+ceTaskUrl=http://10.109.123.241:9000/api/ce/task?id=AYFcfhGdBP2SCap3bM6n

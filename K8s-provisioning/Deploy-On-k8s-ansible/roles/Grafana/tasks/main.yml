@@ -1,0 +1,20 @@
+---
+# tasks file for Prometheus
+
+- name: Create Prometheus Workspace   
+  shell: kubectl create namespace jenkins ;
+- name: Create Prometheus configmap 
+  shell: kubectl apply -f /home/master/Desktop/kubernetes/ansible/roles/Prometheus/tasks/Prometheus-ser.yaml   
+- name: Create Prometheus PV 
+  shell: kubectl apply -f /home/master/Desktop/kubernetes/ansible/roles/Prometheus/tasks/Prometheus-vol.yaml  
+- name: Create Prometheus PVC
+  shell: kubectl apply -f /home/master/Desktop/kubernetes/ansible/roles/Prometheus/tasks/Prometheus-pvc.yaml  
+- name: Create Prometheus Config-Map
+  shell: kubectl apply -f /home/master/Desktop/kubernetes/ansible/roles/Prometheus/tasks/Prometheus-config-map.yaml  
+- name: Create Prometheus Deployement   
+  shell: kubectl apply -f /home/master/Desktop/kubernetes/ansible/roles/Prometheus/tasks/Prometheus-dep.yaml  
+      
+    
+       
+  
+  

@@ -1,0 +1,21 @@
+---
+# tasks file for jenkins full Deployement with Ingress and PVC
+- name: Create Jenkins Workspace   
+  shell: kubectl create namespace jenkins ;
+- name: Create Jekins service account ( Role )
+  shell: kubectl apply -f /home/master/Desktop/kubernetes/ansible/roles/Jenkins/tasks/role.yaml
+- name: Create Jekins service 
+  shell: kubectl apply -f /home/master/Desktop/kubernetes/ansible/roles/Jenkins/tasks/jenkins-ser.yaml   
+- name: Create Jekins PV 
+  shell: kubectl apply -f /home/master/Desktop/kubernetes/ansible/roles/Jenkins/tasks/jenkins-vol.yaml  
+- name: Create Jekins PVC
+  shell: kubectl apply -f /home/master/Desktop/kubernetes/ansible/roles/Jenkins/tasks/jenkins-pvc.yaml  
+- name: Create Jekins Ingress
+  shell: kubectl apply -f /home/master/Desktop/kubernetes/ansible/roles/Jenkins/tasks/jenkins-ing.yaml    
+- name: Create jenkins Deployement   
+  shell: kubectl apply -f /home/master/Desktop/kubernetes/ansible/roles/Jenkins/tasks/jenkins-dep.yaml  
+      
+    
+       
+  
+  

@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: alight-deployment
+  labels:
+    app: alight
+spec:
+  replicas: 
+  selector:
+    matchLabels:
+      app: alight
+  template:
+    metadata:
+      labels:
+        app: alight
+    spec:
+      containers:
+      - name: alight
+        image: aze012/alight:latest
+        ports:
+        - containerPort: 80
+        - containerPort: 4201
+        
+

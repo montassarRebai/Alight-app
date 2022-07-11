@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: jenkins-ing-test
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  ingressClassName: nginx
+  defaultBackend:
+     service:
+       name: jenkins-masters
+       port:
+         number: 8080
+  rules:
+  - host: jenkins-alight.com
+    http:
+      paths:
+      - path: /k8s
+        pathType: Prefix
+        backend:
+          service:
+            name: jenkins-masters
+            port:
+              number: 8080
+          

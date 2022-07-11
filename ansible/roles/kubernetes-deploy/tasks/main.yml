@@ -1,0 +1,7 @@
+---
+# tasks file for kubernetes-deploy
+
+- name: Deploy Alight App with PV and PVC   
+  shell: kubectl apply -f /home/master/Desktop/alight/ansible/roles/kubernetes-deploy/tasks/dep.yaml -n alight ;
+- name: Aight App Status  
+  shell: kubectl get pods -o wide -n alight ;  
