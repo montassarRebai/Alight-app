@@ -1,0 +1,17 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: dynatrace-monitoring-node-exporter
+  namespace: monitoring
+  annotations:
+    metrics.dynatrace.com/port: '9100'
+    metrics.dynatrace.com/scrape: 'true'
+    metrics.dynatrace.com/secure: 'true'
+    metrics.dynatrace.com/path: '/metrics'
+spec:
+  ports:
+    - name: dynatrace-monitoring-node-exporter-port
+      port: 9100
+  selector:
+    app.kubernetes.io/name: node-exporter
+  clusterIP: None
